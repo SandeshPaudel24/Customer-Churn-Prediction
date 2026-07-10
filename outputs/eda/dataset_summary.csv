@@ -1,0 +1,12 @@
+,gender,SeniorCitizen,Partner,Dependents,tenure,PhoneService,PaperlessBilling,MonthlyCharges,TotalCharges,Churn,MultipleLines_No phone service,MultipleLines_Yes,InternetService_Fiber optic,InternetService_No,OnlineSecurity_No internet service,OnlineSecurity_Yes,OnlineBackup_No internet service,OnlineBackup_Yes,DeviceProtection_No internet service,DeviceProtection_Yes,TechSupport_No internet service,TechSupport_Yes,StreamingTV_No internet service,StreamingTV_Yes,StreamingMovies_No internet service,StreamingMovies_Yes,Contract_One year,Contract_Two year,PaymentMethod_Credit card (automatic),PaymentMethod_Electronic check,PaymentMethod_Mailed check
+count,7043.0,7043.0,7043.0,7043.0,7043.0,7043.0,7043.0,7043.0,7043.0,7043.0,7043,7043,7043,7043,7043,7043,7043,7043,7043,7043,7043,7043,7043,7043,7043,7043,7043,7043,7043,7043,7043
+unique,,,,,,,,,,,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+top,,,,,,,,,,,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False
+freq,,,,,,,,,,,6361,4072,3947,5517,5517,5024,5517,4614,5517,4621,5517,4999,5517,4336,5517,4311,5570,5348,5521,4678,5431
+mean,0.504756495811444,0.1621468124378816,0.4830327985233565,0.2995882436461735,32.37114865824223,0.9031662643759761,0.5922192247621753,64.76169246059918,2281.9169281556156,0.2653698707936959,,,,,,,,,,,,,,,,,,,,,
+std,0.5000128736471514,0.3686116056100131,0.49974751071998735,0.45811016751001526,24.55948102309446,0.29575223178363474,0.49145692404940683,30.090047097678493,2265.270398482188,0.441561305121947,,,,,,,,,,,,,,,,,,,,,
+min,0.0,0.0,0.0,0.0,0.0,0.0,0.0,18.25,18.8,0.0,,,,,,,,,,,,,,,,,,,,,
+25%,0.0,0.0,0.0,0.0,9.0,1.0,0.0,35.5,402.225,0.0,,,,,,,,,,,,,,,,,,,,,
+50%,1.0,0.0,0.0,0.0,29.0,1.0,1.0,70.35,1397.475,0.0,,,,,,,,,,,,,,,,,,,,,
+75%,1.0,0.0,1.0,1.0,55.0,1.0,1.0,89.85,3786.6,1.0,,,,,,,,,,,,,,,,,,,,,
+max,1.0,1.0,1.0,1.0,72.0,1.0,1.0,118.75,8684.8,1.0,,,,,,,,,,,,,,,,,,,,,

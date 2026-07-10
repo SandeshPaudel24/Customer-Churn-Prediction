@@ -1,0 +1,6 @@
+customerID,gender,SeniorCitizen,Partner,Dependents,tenure,PhoneService,MultipleLines,InternetService,OnlineSecurity,OnlineBackup,DeviceProtection,TechSupport,StreamingTV,StreamingMovies,Contract,PaperlessBilling,PaymentMethod,MonthlyCharges,TotalCharges,Churn
+CUST-001,Male,0,Yes,No,12,Yes,No,Fiber optic,Yes,Yes,Yes,Yes,Yes,Yes,One year,Yes,Credit card (automatic),85.5,1026.0,No
+CUST-002,Female,1,No,No,5,Yes,Yes,DSL,No,No,No,No,No,No,Month-to-month,Yes,Electronic check,45.2,226.0,Yes
+CUST-003,Male,0,Yes,Yes,24,Yes,No,Fiber optic,Yes,Yes,Yes,Yes,Yes,Yes,Two year,No,Bank transfer (automatic),95.0,2280.0,No
+CUST-004,Female,0,No,No,2,No,No phone service,DSL,Yes,No,No,No,No,No,Month-to-month,No,Mailed check,29.85,59.7,Yes
+CUST-005,Male,1,Yes,Yes,36,Yes,Yes,Fiber optic,No,No,Yes,No,Yes,No,One year,Yes,Electronic check,78.9,2840.4,No
