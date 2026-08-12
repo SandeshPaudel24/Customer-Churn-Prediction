@@ -28,11 +28,10 @@ class DataPreprocessor:
         print("\nDataset Information")
         print("-" * 60)
 
-        print(self.df.info())
+        self.df.info()
 
         print("\nData Types")
         print(self.df.dtypes)
-
     # -----------------------------
     # Missing Values
     # -----------------------------

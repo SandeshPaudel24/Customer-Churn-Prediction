@@ -84,9 +84,15 @@ page = st.sidebar.radio(
 @st.cache_data
 def load_data():
     from config import DATA_PATH
+
     if os.path.exists(DATA_PATH):
         df = pd.read_csv(DATA_PATH)
+
+        if "customerID" in df.columns:
+            df["customerID"] = df["customerID"].astype(str)
+
         return df
+
     return None
 
 # Preprocess data function
@@ -188,10 +194,11 @@ def data_overview_page():
         
         st.subheader("Data Types")
         dtypes_df = pd.DataFrame({
-            "Column": df.columns,
-            "Data Type": df.dtypes.values,
+            "Column": df.columns.astype(str),
+            "Data Type": df.dtypes.astype(str).values,
             "Non-Null Count": df.count().values
         })
+
         st.dataframe(dtypes_df)
     
     with tab3:
