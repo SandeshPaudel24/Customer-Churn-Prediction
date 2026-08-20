@@ -557,7 +557,7 @@ def predict_new_customer_page():
     
     prediction_method = st.radio(
         "Choose Prediction Method",
-        ["Upload CSV", "Manual Entry"],
+        ["Upload CSV"],
         horizontal=True
     )
     
@@ -625,101 +625,101 @@ def predict_new_customer_page():
             except Exception as e:
                 st.error(f"Error reading file: {str(e)}")
     
-    else:
-        st.subheader("✏️ Manual Entry")
+    # else:
+    #     st.subheader("✏️ Manual Entry")
         
-        st.info("Enter customer details for prediction")
+    #     st.info("Enter customer details for prediction")
         
-        # Full form matching the dataset structure
-        col1, col2, col3 = st.columns(3)
+    #     # Full form matching the dataset structure
+    #     col1, col2, col3 = st.columns(3)
         
-        with col1:
-            customer_id = st.text_input("Customer ID", "CUST-NEW")
-            gender = st.selectbox("Gender", ["Male", "Female"])
-            senior_citizen = st.selectbox("Senior Citizen", [0, 1])
-            partner = st.selectbox("Partner", ["Yes", "No"])
-            dependents = st.selectbox("Dependents", ["Yes", "No"])
-            tenure = st.number_input("Tenure (months)", 0, 72, 12)
+    #     with col1:
+    #         customer_id = st.text_input("Customer ID", "CUST-NEW")
+    #         gender = st.selectbox("Gender", ["Male", "Female"])
+    #         senior_citizen = st.selectbox("Senior Citizen", [0, 1])
+    #         partner = st.selectbox("Partner", ["Yes", "No"])
+    #         dependents = st.selectbox("Dependents", ["Yes", "No"])
+    #         tenure = st.number_input("Tenure (months)", 0, 72, 12)
         
-        with col2:
-            phone_service = st.selectbox("Phone Service", ["Yes", "No"])
-            multiple_lines = st.selectbox("Multiple Lines", ["Yes", "No", "No phone service"])
-            internet_service = st.selectbox("Internet Service", ["DSL", "Fiber optic", "No"])
-            online_security = st.selectbox("Online Security", ["Yes", "No", "No internet service"])
-            online_backup = st.selectbox("Online Backup", ["Yes", "No", "No internet service"])
-            device_protection = st.selectbox("Device Protection", ["Yes", "No", "No internet service"])
+    #     with col2:
+    #         phone_service = st.selectbox("Phone Service", ["Yes", "No"])
+    #         multiple_lines = st.selectbox("Multiple Lines", ["Yes", "No", "No phone service"])
+    #         internet_service = st.selectbox("Internet Service", ["DSL", "Fiber optic", "No"])
+    #         online_security = st.selectbox("Online Security", ["Yes", "No", "No internet service"])
+    #         online_backup = st.selectbox("Online Backup", ["Yes", "No", "No internet service"])
+    #         device_protection = st.selectbox("Device Protection", ["Yes", "No", "No internet service"])
         
-        with col3:
-            tech_support = st.selectbox("Tech Support", ["Yes", "No", "No internet service"])
-            streaming_tv = st.selectbox("Streaming TV", ["Yes", "No", "No internet service"])
-            streaming_movies = st.selectbox("Streaming Movies", ["Yes", "No", "No internet service"])
-            contract = st.selectbox("Contract Type", ["Month-to-month", "One year", "Two year"])
-            paperless_billing = st.selectbox("Paperless Billing", ["Yes", "No"])
-            payment_method = st.selectbox("Payment Method", 
-                ["Electronic check", "Mailed check", "Bank transfer (automatic)", "Credit card (automatic)"])
-            monthly_charges = st.number_input("Monthly Charges", 0.0, 200.0, 50.0)
-            total_charges = st.number_input("Total Charges", 0.0, 10000.0, tenure * monthly_charges)
+    #     with col3:
+    #         tech_support = st.selectbox("Tech Support", ["Yes", "No", "No internet service"])
+    #         streaming_tv = st.selectbox("Streaming TV", ["Yes", "No", "No internet service"])
+    #         streaming_movies = st.selectbox("Streaming Movies", ["Yes", "No", "No internet service"])
+    #         contract = st.selectbox("Contract Type", ["Month-to-month", "One year", "Two year"])
+    #         paperless_billing = st.selectbox("Paperless Billing", ["Yes", "No"])
+    #         payment_method = st.selectbox("Payment Method", 
+    #             ["Electronic check", "Mailed check", "Bank transfer (automatic)", "Credit card (automatic)"])
+    #         monthly_charges = st.number_input("Monthly Charges", 0.0, 200.0, 50.0)
+    #         total_charges = st.number_input("Total Charges", 0.0, 10000.0, tenure * monthly_charges)
         
-        if st.button("Predict Churn"):
-            try:
-                from src.predict import predict_from_dict
+    #     if st.button("Predict Churn"):
+    #         try:
+    #             from src.predict import predict_from_dict
                 
-                # Create customer data dictionary
-                customer_data = {
-                    "customerID": customer_id,
-                    "gender": gender,
-                    "SeniorCitizen": senior_citizen,
-                    "Partner": partner,
-                    "Dependents": dependents,
-                    "tenure": tenure,
-                    "PhoneService": phone_service,
-                    "MultipleLines": multiple_lines,
-                    "InternetService": internet_service,
-                    "OnlineSecurity": online_security,
-                    "OnlineBackup": online_backup,
-                    "DeviceProtection": device_protection,
-                    "TechSupport": tech_support,
-                    "StreamingTV": streaming_tv,
-                    "StreamingMovies": streaming_movies,
-                    "Contract": contract,
-                    "PaperlessBilling": paperless_billing,
-                    "PaymentMethod": payment_method,
-                    "MonthlyCharges": monthly_charges,
-                    "TotalCharges": total_charges
-                }
+    #             # Create customer data dictionary
+    #             customer_data = {
+    #                 "customerID": customer_id,
+    #                 "gender": gender,
+    #                 "SeniorCitizen": senior_citizen,
+    #                 "Partner": partner,
+    #                 "Dependents": dependents,
+    #                 "tenure": tenure,
+    #                 "PhoneService": phone_service,
+    #                 "MultipleLines": multiple_lines,
+    #                 "InternetService": internet_service,
+    #                 "OnlineSecurity": online_security,
+    #                 "OnlineBackup": online_backup,
+    #                 "DeviceProtection": device_protection,
+    #                 "TechSupport": tech_support,
+    #                 "StreamingTV": streaming_tv,
+    #                 "StreamingMovies": streaming_movies,
+    #                 "Contract": contract,
+    #                 "PaperlessBilling": paperless_billing,
+    #                 "PaymentMethod": payment_method,
+    #                 "MonthlyCharges": monthly_charges,
+    #                 "TotalCharges": total_charges
+    #             }
                 
-                # Make prediction
-                results = predict_from_dict(customer_data)
+    #             # Make prediction
+    #             results = predict_from_dict(customer_data)
                 
-                # Display results
-                prediction = "Yes" if results['Prediction'][0] == 1 else "No"
-                probability = results['Probability'][0]
-                risk_level = results['Churn_Risk'][0]
+    #             # Display results
+    #             prediction = "Yes" if results['Prediction'][0] == 1 else "No"
+    #             probability = results['Probability'][0]
+    #             risk_level = results['Churn_Risk'][0]
                 
-                st.success("Prediction completed!")
+    #             st.success("Prediction completed!")
                 
-                # Display prediction card
-                col1, col2, col3 = st.columns(3)
+    #             # Display prediction card
+    #             col1, col2, col3 = st.columns(3)
                 
-                with col1:
-                    st.metric("Churn Prediction", prediction)
-                with col2:
-                    st.metric("Probability", f"{probability:.4f}")
-                with col3:
-                    st.metric("Risk Level", risk_level)
+    #             with col1:
+    #                 st.metric("Churn Prediction", prediction)
+    #             with col2:
+    #                 st.metric("Probability", f"{probability:.4f}")
+    #             with col3:
+    #                 st.metric("Risk Level", risk_level)
                 
-                # Risk level color coding
-                if risk_level == "High":
-                    st.error("⚠️ High churn risk - Immediate attention recommended")
-                elif risk_level == "Medium":
-                    st.warning("⚡ Medium churn risk - Monitor customer")
-                else:
-                    st.success("✅ Low churn risk - Customer stable")
+    #             # Risk level color coding
+    #             if risk_level == "High":
+    #                 st.error("⚠️ High churn risk - Immediate attention recommended")
+    #             elif risk_level == "Medium":
+    #                 st.warning("⚡ Medium churn risk - Monitor customer")
+    #             else:
+    #                 st.success("✅ Low churn risk - Customer stable")
                 
-            except Exception as e:
-                st.error(f"Error making prediction: {str(e)}")
-                import traceback
-                st.error(traceback.format_exc())
+    #         except Exception as e:
+    #             st.error(f"Error making prediction: {str(e)}")
+    #             import traceback
+    #             st.error(traceback.format_exc())
 
 # Reports Page
 def reports_page():
